@@ -40,6 +40,7 @@ class Fleep extends Adapter
 
   # Public: Dispatch a received message to the robot.
   receive: (message) ->
+    return if message.owner.username is @robot.name
     @robot.receive message
 
   run: ->
